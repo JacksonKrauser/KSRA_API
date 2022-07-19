@@ -59,19 +59,26 @@ function validateForm() {
       }
    } 
 
-     /* Save data to external file*/
-     function submit () {
-      var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(submit));
-      var downloadAnchorNode = document.createElement('a');
-      downloadAnchorNode.setAttribute("href",     dataStr);
-      downloadAnchorNode.setAttribute("download", "interest_form.json");
-      document.body.appendChild(link); // required for firefox
-      downloadAnchorNode.click();
-      downloadAnchorNode.remove();
-    }
+     /* Save data to external file should there be set in front of fso and s */
+      function WriteToFile(passForm) {
+ 
+      fso = CreateObject("Scripting.FileSystemObject"); 
+      s   = fso.CreateTextFile("uploads\Interest_data.txt", True);
+   
+      var email = document.getElementById('email');
+      var fname  = document.getElementById('fname');
+      var lname = document.getElementById('lname');
+      var pnumber  = document.getElementById('pnumber');
+   
+      s.writeline("email :" + email);
+      s.writeline("lname :" + lname);
+      s.writeline("fname :" + fname);
+      s.writeline("pnumber :" + pnumber);
+   
+      s.writeline("-----------------------------");
+      s.Close();
+   }
   
-  
-
 
 /* Display current date and time */
 
@@ -90,3 +97,45 @@ function show_now() {
     }
   }
   
+ 
+  
+ //Weather API
+
+let weather = {
+  apiKey: "281eb62ec4698f223fe8d6127a7a1ead",
+  fetchWeather: function (city) {
+    fetch(
+      "https://api.openweathermap.org/data/2.5/weather?q=" 
+      + city 
+      + "&appid=" 
+      + this.apiKey)
+    .then((response) => response.json());
+  }},
+
+  displayWeather: function (data) {
+    const { name } = data;
+    const { icon, description } = data.weather[0];
+    const { temp, humidity } = data.main;
+    const {speed } = data.wind;
+    document.querySelector(".city").innerText = "Weather in " + name;
+    document.querySelector("icon").src =  
+    "https://openweathermap.org/img/wn/"  + icon + ".png";
+    document.querySelector(".description").innerText = description;
+    document.querySelector(".temp").innerText = temp + "°F";
+    document.querySelector(".humidity").innerText = "Humidity: " + humidity + " %";
+    document.querySelector(".wind").innerText = "Wind speed " + speed + " km/h";
+    document.querySelector(".weather").classList.remove("loading");
+    search: function () {
+    this.fetchWeather(document.querySelector(".search-bar").value);
+  }  
+},
+
+document.querySelector(".search button").addEventListener("click", function () {
+  weather.search();
+}),
+
+document.querySelector(".search-bar").addEventListener("keyup", function (event) {
+  if (event.key == "Enter") {
+    weather.search();
+  }
+});

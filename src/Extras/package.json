@@ -7,11 +7,12 @@
     "prestart": "babel-node buildScripts/startMessage.js",
     "start": "npm-run-all --parallel open:src lint: watch",
     "open:src": "babel-node buildScripts/srcServer.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel start localtunnel",
     "lint": "esw webpack.config.* src buildScripts --color",
-    "lint-watch": "npm run lint --watch"
+    "lint-watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Jackson Krauser",
   "license": "ISC",
@@ -21,18 +22,3 @@
   }
 }
 
-{
-  "name": "mypackage",
-  "version": "0.0.1",
-  "eslintConfig": {
-    "plugins": ["example"],
-    "env": {
-      "example/custom": true
-    }
-
-  }
-}
-
-
-
-//nodemon.js on start line//line 19-25 added

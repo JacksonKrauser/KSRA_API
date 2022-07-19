@@ -1,4 +1,4 @@
-import './index.css';
+import './styles.css';
 app.use(express.static("public"));
 
 // Bring in the express server and create application
@@ -24,8 +24,6 @@ var server = app.listen(5000, function () {
 //test code
 const express = require('express');
 
-const app = express();
-
 app.use(express.static('public'));
 
 app.post('/api/single-file', (req, res) => {
@@ -35,3 +33,4 @@ app.post('/api/single-file', (req, res) => {
 });
 
 //
+

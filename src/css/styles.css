@@ -3,10 +3,11 @@ body {
   margin-top: 0rem;
   background-color: white;
   padding: 0.2em;
+  background-color:#373E98;
 }
 
 #mainheader {
-  background-color: lightblue;
+  background-color: #fee36e;
   margin: 0.5rem;
 }
 img.logo {
@@ -17,11 +18,15 @@ img.logo {
 }
 
 #message {
-  color: red;
+  color: black;
 }
 
 ul {
   list-style-type: none;
+  margin-top: 0px;
+  padding: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
 
 /*Main Menu */
@@ -51,7 +56,7 @@ ul {
 
 /* Style navigation menu links */
 .topnav a {
-  color: white;
+  color: black;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
@@ -70,14 +75,13 @@ ul {
 }
 
 /* Style the active link (or home/logo) */
-.active {
-  background-color: #04AA6D; 
+.active { 
   color: white;
 }
 
 .menuHeader {
   display: flex;
-  background-color: rgb(107, 152, 172);
+  background-color:#fee36e;
 }
 
 .menuHeader ul li {
@@ -92,14 +96,21 @@ ul {
 Main Content h1,
 h2,
 h3,
-h4 {
-  display: flex;
-  background-color: white;
+h4, 
+h5 {
+  display: grid;
+  background-color: #fee36e;
   border: black;
+  text-align:center;
+  border:black;
+  padding:0.2rem;
+  border-radius:15%;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
 
 p {
-  color: black;
+  color: white;
   justify-content: flex-end;
   display: flex;
   flex-wrap: wrap;
@@ -127,13 +138,14 @@ input {
 .FAQ1,
 .FAQ2,
 .FAQ3 {
-  padding: 0.1em;
+  color:white;
+  padding: 0em;
 }
 
 footer {
   display: flex;
   padding: 1em;
-  background: #6cf;
+  background: #fee36e;
 }
 
 footer p {
@@ -143,13 +155,17 @@ footer p {
   justify-content: space-evenly;
 }
 
+.meetingMinutes {
+  color:black;
+}
+
 /* Medium Query */
 @media (min-width: 768px) {
   body {
     display: grid;
     font-family: Georgia, "Times New Roman", Times, serif;
     margin-top: 0rem;
-    background-color: white;
+    background-color: #373E98;
     grid-template-columns: 50% 50%;
   }
 
@@ -173,7 +189,7 @@ footer p {
     display: flex;
   }
 
-  .navigation-desktip > li > a {
+  .navigation-desktop > li > a {
     display: none;
   }
 
@@ -196,7 +212,7 @@ footer p {
 
   /* Style navigation menu links */
   .topnav a {
-    color: white;
+    color: black;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -215,13 +231,13 @@ footer p {
 
   /* Style the active link (or home/logo) */
   .active {
-    /* background-color: #04AA6D; */
+    background-color: #fee36e;
     color: white;
   }
 
   .menuHeader {
     grid-row: 1 / 1;
-    background-color: lightseagreen;
+    background-color: #fee36e;
   }
 
   h1 p {
@@ -278,11 +294,6 @@ footer p {
     grid-column-end: 3;
   }
 
-  ul {
-    margin-top: 0px;
-    padding: 0px;
-  }
-
   p {
     display: grid;
     grid-column: 1 / 4 span 1;
@@ -298,7 +309,7 @@ footer p {
     bottom: 0;
     width: 100%;
     height: 30px; /* Height of the footer */
-    background: #6cf;
+    background: #fee36e;
   }
 
   footer p {
@@ -315,15 +326,17 @@ footer p {
 @media (min-width: 1024px) {
   body {
     display: grid;
+    margin:1em;
+    padding:0.5em;
+    grid-template-columns: repeat(3, 1fr);
     font-family: Georgia, "Times New Roman", Times, serif;
     margin-top: 0rem;
-    background-color: white;
-    grid-template-columns: 30% 35% 30%;
+    background-color: #373E98;
   }
 
   #mainheader {
     display: grid;
-    background-color: #1db3ee;
+    background-color: #fee36e;
     margin: 0.5rem;
     grid-column: 1 / span 4;
   }
@@ -348,10 +361,12 @@ footer p {
   }
 
   .navigation-desktop li {
+    color:white;
     float: left;
   }
 
   .navigation-desktop li a {
+    color:black;
     display: inline-block;
     padding: 0.4rem 4rem;
   }
@@ -378,7 +393,7 @@ footer p {
   /* Style navigation menu links */
   .topnav a {
     display: none;
-    color: white;
+    color: black;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
@@ -407,7 +422,7 @@ footer p {
   .menuHeader {
     display: none;
     grid-row: 1 / 1;
-    background-color: green;
+    background-color: #fee36e;
   }
 
   h1,
@@ -441,49 +456,22 @@ footer p {
 
   h3 {
     display: grid;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 3;
-    grid-column-end: 4;
   }
 
-  .FAQ1 {
-    display: grid;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    grid-column-start: 3;
-    grid-column-end: 4;
-  }
-
-  .FAQ2 {
-    display: grid;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    grid-column-start: 3;
-    grid-column-end: 4;
-  }
-
-  .FAQ3 {
-    display: grid;
-    grid-row-start: 5;
-    grid-row-end: 6;
-    grid-column-start: 3;
-    grid-column-end: 4;
+  h3 .FAQ1FAQ2FAQ3 {
+    display:grid;
   }
 
   h4 {
     display: grid;
-    grid-row-start: 7;
-    grid-row-end: 8;
-    grid-column-start: 1;
-    grid-column-end: 2;
   }
 
-  .resourceList {
+  h4 .resourceList {
     display: grid;
   }
     
-    .card {
+  .card {
+      display:flex;
       background:00000d0;
       color:white;
       padding:1em;
@@ -507,18 +495,27 @@ footer p {
       text-transform: capitalize;
     }
 
-    h1.temp {
+    h5.temp {
       margin:0;
       margin-bottom: 0.2em;
+      color:white;
     }
 
-    .weather.loading:after {
+    h5.div {
+      color:white;
+    }
+
+    h5.wind {
+      color:white;
+    }
+
+    /*.weather.loading:after {
       visibility: visible;
       content: "Loading...";
       color: white;
       position: absolute;
       top: 0;
-    }
+    }*/
   
     .input-search-bar {
       border:none;
@@ -539,22 +536,17 @@ footer p {
       grid-column-end: 2;
   } 
 
-  ul {
-    margin-top: 0px;
-    padding: 0px;
-  }
-
   footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 40px; /* Height of the footer */
-    background: #6cf;
+    background: #fee36e;
   }
 
   footer p {
     display: flex;
-    color: black;
+    color: white;
     padding-left: 1rem;
     padding-right: 1rem;
   }

@@ -39,10 +39,14 @@
   
   h1 {
     display:grid;
-    background-color: white;
+    background-color: #fee36e;
     border:black;
     padding:0.2rem;
     font-style:normal;
+    border-radius:15%;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    text-align:center;
 }
   
   /* Grouping content
@@ -75,9 +79,9 @@
   /**
    * Remove the gray background on active links in IE 10.
    */
-  
+
   a {
-    background-color: transparent;
+    color: white;
   }
   
   /**

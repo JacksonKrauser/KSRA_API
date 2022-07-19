@@ -2,5 +2,5 @@ Kentucky Soccer Officials Association provides Louisville area referees the abil
 
 You need to run NPM Install to access this application.
 
-Javascript features include a weather API, regular expressions to check for letters and numbers only in the "interest form", and data saved to an external server from the form.
+Javascript features include a weather API, regular expressions to check for letters and numbers only in the "interest form", data saved to a server from the form, and a dictionary of arrays with soccer referee terms.
 

@@ -59,6 +59,17 @@ function validateForm() {
       }
    } 
 
+   /*Regular expression to check for proper email address */
+   function ValidateEmail(email) 
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.email.value))
+  {
+    return (true)
+  }
+    alert("You have entered an invalid email address!")
+    return (false)
+}
+
      /* Save data to external file should there be set in front of fso and s */
       function WriteToFile(passForm) {
  
@@ -139,3 +150,15 @@ document.querySelector(".search-bar").addEventListener("keyup", function (event)
     weather.search();
   }
 });
+
+//Array with soccer term of the day//
+var terms = new Array();
+terms[0] = "SPA";
+terms[1] = "DOGSO";
+terms[2] = "Offside";
+terms[3] = "SFP";
+
+for (i=0;i<terms.length;i++)
+{
+document.write(termss[i]);
+}

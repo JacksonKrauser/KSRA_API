@@ -139,8 +139,9 @@ let weather = {
       document.querySelector(".weather").classList.remove("loading");
         search = function () {
           this.fetchWeather(document.querySelector(".search-bar").value);
-    };
-
+        };
+  },
+};
   document.querySelector(".search button").addEventListener("click", function () {
     weather.search();
   });
@@ -156,14 +157,14 @@ let weather = {
   ;
   
 
-//Array with soccer term of the day//
-var terms = new Array();
-terms[0] = "SPA";
-terms[1] = "DOGSO";
-terms[2] = "Offside";
-terms[3] = "SFP";
+// //Array with soccer term of the day//
+// var terms = new Array();
+// terms[0] = "SPA";
+// terms[1] = "DOGSO";
+// terms[2] = "Offside";
+// terms[3] = "SFP";
 
-for (i=0;i<terms.length;i++) 
-{
-document.write(terms[i]);
-}
+// for (i=0;i<terms.length;i++) 
+// {
+// document.write(terms[i]);
+// }//

@@ -39,6 +39,7 @@
   
   h1 {
     display:grid;
+    color:black;
     background-color: #fee36e;
     border:black;
     padding:0.2rem;

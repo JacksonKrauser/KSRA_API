@@ -125,6 +125,7 @@ form {
   border-radius: 10%;
   outline: #333;
   opacity: 90%;
+  color:black;
 }
 
 input {
@@ -133,13 +134,6 @@ input {
 
 #submit {
   background-color: #00000012;
-}
-
-.FAQ1,
-.FAQ2,
-.FAQ3 {
-  color:white;
-  padding: 0em;
 }
 
 footer {
@@ -153,9 +147,15 @@ footer p {
   flex-direction: row;
   color: black;
   justify-content: space-evenly;
+  text-align:center;
+  text-decoration: none;
 }
 
 .meetingMinutes {
+  color:white;
+}
+
+#meetingDates {
   color:black;
 }
 
@@ -175,6 +175,7 @@ footer p {
     margin: 0.5rem;
     grid-column: 1 / span 2;
     column-width: 2;
+    width:100%;
   }
 
   #myLinks {
@@ -236,7 +237,7 @@ footer p {
   }
 
   .menuHeader {
-    grid-row: 1 / 1;
+    grid-column: 1 / 1;
     background-color: #fee36e;
   }
 
@@ -258,33 +259,37 @@ footer p {
     display: grid;
     grid-row-start: 4;
     grid-row-end: 5;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start: 0;
+    grid-column-end: 1;
   }
 
   .FAQ1 {
+    color:white;
     display: grid;
-    grid-row-start: 5;
+    grid-row-start: 6;
     grid-row-end: 6;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start: 0;
+    grid-column-end: 1;
   }
 
   .FAQ2 {
-    display: grid;
-    grid-row-start: 6;
-    grid-row-end: 7;
-    grid-column-start: 1;
-    grid-column-end: 2;
+      color:white;
+      display: grid;
+      grid-row-start: 7;
+      grid-row-end: 7;
+      grid-column-start: 0;
+      grid-column-end: 1;
   }
 
   .FAQ3 {
+    color:white;
     display: grid;
-    grid-row-start: 7;
+    grid-row-start: 8;
     grid-row-end: 8;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start: 0;
+    grid-column-end: 1;
   }
+
 
   h4 .resourcelist {
     display: grid;
@@ -328,17 +333,24 @@ footer p {
     display: grid;
     margin:1em;
     padding:0.5em;
-    grid-template-columns: repeat(3, 1fr);
     font-family: Georgia, "Times New Roman", Times, serif;
     margin-top: 0rem;
     background-color: #373E98;
+    grid-column-start: 1;
+    grid-column-end:3;
+    grid-row-start: 1;
+    grid-row-end:9;
+    grid-template-columns: auto auto auto;
   }
 
   #mainheader {
     display: grid;
     background-color: #fee36e;
     margin: 0.5rem;
-    grid-column: 1 / span 4;
+    grid-column-start:1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end:2;
   }
 
   img {
@@ -350,9 +362,12 @@ footer p {
 
   .navigation-desktop {
     display: grid;
-    grid-column-start: 0;
+    grid-column-start: 1;
     grid-column-end: 3;
+    grid-row-start:1;
+    grid-row-end:2;
     width: 100%;
+
   }
 
   .navigation-desktop ul {
@@ -421,32 +436,44 @@ footer p {
 
   .menuHeader {
     display: none;
-    grid-row: 1 / 1;
+    grid-row: 1 / 8;
     background-color: #fee36e;
+    border-radius:1em;
+    grid-column-start:0;
+    grid-column-end:3;
   }
 
-  h1,
-  p {
+  h1
+  { display: grid;
+    grid-column-start: 0;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .h1p1 {
     display: grid;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-start: 0;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    grid-row-end:4;
   }
 
   h2 {
-    display: grid;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    padding: 0.2rem;
+      display: grid;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 2;
   }
 
   form {
     display: grid;
     grid-row-start: 3;
-    grid-row-end: 11;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding:0.1em;
   }
 
   #message {
@@ -456,22 +483,65 @@ footer p {
 
   h3 {
     display: grid;
+    grid-column-start: 0;
+    grid-column-end: 1;
+    grid-row-start:4;
+    grid-row-end:5;
   }
 
-  h3 .FAQ1FAQ2FAQ3 {
+  .FAQ1 {
     display:grid;
+    grid-column-start: 0;
+    grid-column-end: 1;
+    grid-row-start:5;
+    grid-row-end:6;
   }
+  .FAQ2 {
+    display:grid;
+    grid-column-start: 0;
+    grid-column-end: 1;
+    grid-row-start:6;
+    grid-row-end:7;
+  }
+  .FAQ3 {
+      display:grid;
+      grid-column-start: 0;
+      grid-column-end: 1;
+      grid-row-start:7;
+      grid-row-end:8;
+  }
+
 
   h4 {
     display: grid;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
   }
 
-  h4 .resourceList {
+  .resourceList {
     display: grid;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .weather.loading  {
+    display:grid;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 3;
   }
     
   .card {
-      display:flex;
+      display:grid;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start:6;
+      grid-row-end:8;
       background:00000d0;
       color:white;
       padding:1em;
@@ -495,27 +565,23 @@ footer p {
       text-transform: capitalize;
     }
 
-    h5.temp {
+    .temp {
       margin:0;
       margin-bottom: 0.2em;
       color:white;
     }
 
-    h5.div {
+    .description, .humidity, .wind {
       color:white;
     }
 
-    h5.wind {
-      color:white;
-    }
-
-    /*.weather.loading:after {
-      visibility: visible;
+    .weather.loading:after {
+      visibility: hidden;
       content: "Loading...";
       color: white;
       position: absolute;
       top: 0;
-    }*/
+    }
   
     .input-search-bar {
       border:none;

@@ -121,9 +121,9 @@ let weather = {
       + "&appid=" 
       + this.apiKey)
     .then((response) => response.json());
-  }},
+  },
 
-  displayWeather: function (data) {
+  displayWeather = function (data) {
     const { name } = data;
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
@@ -136,10 +136,9 @@ let weather = {
     document.querySelector(".humidity").innerText = "Humidity: " + humidity + " %";
     document.querySelector(".wind").innerText = "Wind speed " + speed + " km/h";
     document.querySelector(".weather").classList.remove("loading");
-    search: function () {
+    search = function () {
     this.fetchWeather(document.querySelector(".search-bar").value);
-  }  
-},
+    };
 
 document.querySelector(".search button").addEventListener("click", function () {
   weather.search();
@@ -148,8 +147,9 @@ document.querySelector(".search button").addEventListener("click", function () {
 document.querySelector(".search-bar").addEventListener("keyup", function (event) {
   if (event.key == "Enter") {
     weather.search();
-  }
-});
+)}}
+;
+  
 
 //Array with soccer term of the day//
 var terms = new Array();

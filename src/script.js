@@ -11,7 +11,7 @@ function validateForm() {
         document.forms["myForm"]["email"].value = "";
         document.forms["myForm"]["fname"].value = "";
         document.forms["myForm"]["lname"].value = "";
-        document.forms["myForm"]["pnumber"].value = "";
+        document.forms["myForm"]["pnumber]"].value = "";
         
         setTimeout(() => {
           document.getElementById("message").style.display = "none";
@@ -64,7 +64,7 @@ function validateForm() {
    /*Regular expression to check for proper email address */
    function ValidateEmail(email) 
   {
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.email.value))
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(Form.email.value))
   {
     return (true)
   }
@@ -113,7 +113,7 @@ function show_now() {
  
  //Weather API Causing Issue with JS running!
 
-let weather = {
+ let weather = {
   apiKey: "281eb62ec4698f223fe8d6127a7a1ead",
   fetchWeather: function (city) {
     fetch(
@@ -157,6 +157,16 @@ let weather = {
       }
     )
   ;
+// var form = document.getElementById('sheetdb-form');
+// form.addEventListener("submit", e => {
+//   e.preventDefault();
+//   fetch(form.action, {
+//       method: "POST",
+//       body: new FormData(document.getElementById("sheetdb-form")),
+//   }).then(
+//       response => response.json())
+//   });
+
   
 //Store form data locally//
 // var inputfname= document.getElementById("fname");
@@ -166,8 +176,7 @@ let weather = {
 // window.localStorage.setItem("lname", inputEmail.value);
 
 // var inputEmail= document.getElementById("email");
-// window.localStorage.setItem("email", inputEmail.value);
-
+// window.localStorage.setItem("email", inputEmail.value); 
 // var inputpnumber= document.getElementById("pnumber");
 // window.localStorage.setItem("pnumber", inputpnumber.value);
 

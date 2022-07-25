@@ -63,11 +63,11 @@
     <h2> New Referees </h2>
         
     <form name="myForm">
-        <form method="post" action="/api/single-file" enctype="multipart/form-data">
+        <form method="POST" action="/api/single-file" enctype="multipart/form-data">
                 First Name: <input type="text" name="fname" placeholder="First Name">
                 Last Name: <input type="text" name="lname" placeholder="Last Name">
-                Email: <input type="text" name="email" placeholder="Email">
-                Phone Number: <input type="number" name="pnumber" min="1000000000" max ="999999999" placeholder="Phone Number">
+                Email: <input type="email" name="email" placeholder="Email">
+                Phone Number: <input type="tel" name="pnumber" min="1000000000" max ="999999999" placeholder="Phone Number">
                 <button type="button" id="submit" onclick="validateForm()" onSubmit="WriteToFile(this)">Submit</button>
                 <p id="message" style="display:none"> </p>
             </form>

@@ -1,3 +1,5 @@
+import { response } from "express";
+
 function validateForm() {
     let x = document.forms["myForm"]["email"].value;
     let y = document.forms["myForm"]["fname"].value;
@@ -122,9 +124,15 @@ function show_now() {
       + "&appid=" 
       + this.apiKey)
     .then((response) => response.json());
+    .then(responseObject => {
+      console.log(responseObject.name);
+      return responseObject;
+    });
   },
 
   displayWeather : function (data) {
+    console.log("in display weather");
+    console.log (data);
     const { name } = data;
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
@@ -139,9 +147,12 @@ function show_now() {
       document.querySelector(".weather").classList.remove("loading");
   },
         search : function () {
-          this.fetchWeather(document.querySelector(".search-bar").value);
+          
+          console.log(this.fetchWeather(document.querySelector(".search-bar").value));
+          return data;
         },
 };
+
 
 
   document.querySelector(".search button").addEventListener("click", function () {
@@ -152,11 +163,14 @@ function show_now() {
     .addEventListener("keyup", 
       function (event) {
       if (event.key == "Enter") {
+        console.log("flag0");
         weather.search();
+        weather.displayWeather(data);
         }
       }
     )
   ;
+    
 // var form = document.getElementById('sheetdb-form');
 // form.addEventListener("submit", e => {
 //   e.preventDefault();

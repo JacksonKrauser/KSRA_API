@@ -11,7 +11,7 @@ function validateForm() {
         document.forms["myForm"]["email"].value = "";
         document.forms["myForm"]["fname"].value = "";
         document.forms["myForm"]["lname"].value = "";
-        document.forms["myForm"]["pnumber"].value = numbers;
+        document.forms["myForm"]["pnumber"].value = "";
         
         setTimeout(() => {
           document.getElementById("message").style.display = "none";
@@ -128,7 +128,7 @@ let weather = {
     const { name } = data;
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
-    const {speed } = data.wind;
+    const { speed } = data.wind;
       document.querySelector(".city").innerText = "Weather in " + name;
       document.querySelector("icon").src =  
       "https://openweathermap.org/img/wn/"  + icon + ".png";
@@ -137,11 +137,13 @@ let weather = {
       document.querySelector(".humidity").innerText = "Humidity: " + humidity + " %";
       document.querySelector(".wind").innerText = "Wind speed " + speed + " km/h";
       document.querySelector(".weather").classList.remove("loading");
-        search = function () {
-          this.fetchWeather(document.querySelector(".search-bar").value);
-        };
   },
+        search : function () {
+          this.fetchWeather(document.querySelector(".search-bar").value);
+        },
 };
+
+
   document.querySelector(".search button").addEventListener("click", function () {
     weather.search();
   });
@@ -156,6 +158,47 @@ let weather = {
     )
   ;
   
+//Store form data locally//
+// var inputfname= document.getElementById("fname");
+// window.localStorage.setItem("fname", inputfname.value);
+
+// var inputlname= document.getElementById("lname");
+// window.localStorage.setItem("lname", inputEmail.value);
+
+// var inputEmail= document.getElementById("email");
+// window.localStorage.setItem("email", inputEmail.value);
+
+// var inputpnumber= document.getElementById("pnumber");
+// window.localStorage.setItem("pnumber", inputpnumber.value);
+
+// var storedValue = localStorage.getItem("fname");
+// var storedValue = localStorage.getItem("lname");
+// var storedValue = localStorage.getItem("email");
+// var storedValue = localStorage.getItem("pnumber");
+
+//var fname = $('#fname').val();
+// var lname = $('#lname').val();
+// var email = $('#email').val();
+// var pnumber = $('#pnumber').val();
+// localStorage.setItem("fname", fname);
+// localStorage.setItem("lname", lname);
+// localStorage.setItem("email", email);
+// localStorage.setItem("pnumber", pnumber);
+
+// function persistInput(input)
+// {
+//   var key = "input-" + fname.id;
+
+//   var storedValue = localStorage.getItem(key);
+
+//   if (storedValue)
+//       input.value = storedValue;
+
+//   input.addEventListener('input', function ()
+//   {
+//       localStorage.setItem(key, fname.value);
+//   });
+// }
 
 // //Array with soccer term of the day//
 // var terms = new Array();

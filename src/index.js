@@ -1,4 +1,4 @@
-import './styles.css';
+import 'styles.css';
 app.use(express.static("public"));
 
 // Bring in the express server and create application

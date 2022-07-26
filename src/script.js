@@ -1,5 +1,3 @@
-import { response } from "express";
-
 function validateForm() {
     let x = document.forms["myForm"]["email"].value;
     let y = document.forms["myForm"]["fname"].value;
@@ -49,7 +47,7 @@ function validateForm() {
   function allnumeric(inputtxt)
     {
       var numbers = /^[0-9]+$/;
-        if(inputtxt.value.match(numbers))
+        if(inputtxt.value.match(pnumber))
         {
           alert('Your phone number was accepted..');
           document.form1.text1.focus();
@@ -123,11 +121,14 @@ function show_now() {
       + city 
       + "&appid=" 
       + this.apiKey)
-    .then((response) => response.json());
-    .then(responseObject => {
-      console.log(responseObject.name);
-      return responseObject;
-    });
+      .then((response) => {
+        if (!response.ok) {
+          alert("No weather found.");
+          throw new Error("No weather found.");
+        }
+        return response.json();
+      })
+      .then((data) => this.displayWeather(data));
   },
 
   displayWeather : function (data) {
@@ -147,17 +148,14 @@ function show_now() {
       document.querySelector(".weather").classList.remove("loading");
   },
         search : function () {
-          
+
           console.log(this.fetchWeather(document.querySelector(".search-bar").value));
           return data;
         },
-};
-
-
 
   document.querySelector(".search button").addEventListener("click", function () {
     weather.search();
-  });
+  }),
 
   document.querySelector(".search-bar")
     .addEventListener("keyup", 
@@ -170,6 +168,8 @@ function show_now() {
       }
     )
   ;
+
+weather.fetchWeather("Denver");
     
 // var form = document.getElementById('sheetdb-form');
 // form.addEventListener("submit", e => {

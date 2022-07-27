@@ -133,11 +133,16 @@ form {
   color:white;
 }
 
+.resourceList li a {
+  color:white;
+}
+
 input {
   display: block;
 }
 
 #submit {
+  color:black;
   background-color: #fee36e;
 }
 
@@ -161,6 +166,10 @@ footer p {
 }
 
 .meetingDates {
+  color:black;
+}
+
+div#display {
   color:black;
 }
 
@@ -242,7 +251,8 @@ footer p {
   }
 
   .menuHeader {
-    grid-column: 1 / 1;
+    grid-column-start:1%;
+    grid-column-end: 100;
     background-color: #fee36e;
   }
 
@@ -272,6 +282,7 @@ footer p {
   }
 
   form {
+    text-align:center;
     display: grid;
     grid-column-start: 51%;
     grid-column-end: 100%;
@@ -282,7 +293,7 @@ footer p {
   h3 {
     display: grid;
     grid-column-start: 1%;
-    grid-column-end: 50%;
+    grid-column-end: 49%;
     grid-row-start: 5;
     grid-row-end: 6;
   }
@@ -326,12 +337,18 @@ footer p {
   .resourceList {
     display: grid;
     grid-row-start: 5;
-    grid-row-end: 7;
+    grid-row-end: 6;
     grid-column-start: 51%;
     grid-column-end: 100%;
   }
 
-
+  h5, .card, .weather {
+    display:grid;
+    grid-row-start: 6;
+    grid-row-end: 8;
+    grid-column-start: 51%;
+    grid-column-end: 100%;
+  }
   p {
     display: grid;
     grid-column: 1 / 4 span 1;
@@ -358,6 +375,8 @@ footer p {
     padding-left: 0.7em;
     padding-right: 0.7em;
   }
+
+
 }
 
 /* Large Media Query */
@@ -653,7 +672,7 @@ footer p {
 
   footer p {
     display: flex;
-    color: white;
+    color: black;
     padding-left: 1rem;
     padding-right: 1rem;
   }

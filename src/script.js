@@ -29,7 +29,7 @@ function validateForm() {
 /*Regular Expression to check for letters in */
 function allLetter(inputtxt)
 {
-  var letters = /^[A-Za-z]+$/;
+  let letters = /^[A-Za-z]+$/;
   if(inputtxt.value.match(letters))
   {
     return true;
@@ -42,7 +42,7 @@ function allLetter(inputtxt)
 /*Regular Expression to check for numbers in phone number */
 function allnumeric(inputtxt)
 {
-  var numbers = /^[0-9]+$/;
+  let numbers = /^[0-9]+$/;
   if(inputtxt.value.match(pnumber))
   {
     alert('Your phone number was accepted..');
@@ -88,7 +88,7 @@ function WriteToFile(passForm) {
 
 /* Display current date and time */
 function show_now() {
-  var my_time = new Date();
+  let my_time = new Date();
   document.getElementById('display').innerHTML=my_time
   setTimeout (() => {
     document.getElementById("display").style.display = "none";

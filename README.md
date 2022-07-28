@@ -10,6 +10,6 @@ It starts with flex, then goes to a two-column layout for medium queries and lar
 This website includes a form to recruit new referees and displays a message to validate submissions.  
 
 Javascript features include a weather API, regular expressions to check for letters and numbers only in the "interest form", 
-data saved to an external source from the form, calculate and display data based on an external factor (ex: get the current date with the "Show Date" button), 
+data saved to an external source from the form at https://docs.google.com/spreadsheets/d/1Cl_AWxTgdThK9ShpWaAnt9znvvRxKY9k6PKjwD4aOa0/edit#gid=0, calculate and display data based on an external factor (ex: get the current date with the "Show Date" button), 
 use a function that accepts two or more values (parameters), calculates or determines a new value based on those inputs, and returns a new value.
 

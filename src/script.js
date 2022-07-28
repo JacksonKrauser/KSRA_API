@@ -67,23 +67,15 @@ function ValidateEmail(email)
 }
 
 /* Save data to external file should there be set in front of fso and s */
-function WriteToFile(passForm) {
-  fso = CreateObject("Scripting.FileSystemObject"); 
-  s   = fso.CreateTextFile("uploads\Interest_data.txt", True);
-
-  var email = document.getElementById('email');
-  var fname  = document.getElementById('fname');
-  var lname = document.getElementById('lname');
-  var pnumber  = document.getElementById('pnumber');
-
-  s.writeline("email :" + email);
-  s.writeline("lname :" + lname);
-  s.writeline("fname :" + fname);
-  s.writeline("pnumber :" + pnumber);
-
-  s.writeline("-----------------------------");
-  s.Close();
-}
+const scriptURL ='https://script.google.com/macros/s/AKfycbz_jalCz_2aGOUlh35I1DZvmM0jzmUmwRjmZaeS1Bkpe18RlKQDknxxE1gDVB5Gu43e/exec'
+const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(myForm)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
   
 
 /* Display current date and time */

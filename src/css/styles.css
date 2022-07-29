@@ -589,31 +589,32 @@ div#display {
     display: grid;
     grid-column-start: 0;
     grid-column-end: 1;
-    grid-row-start:4;
-    grid-row-end:5;
+    grid-row-start:5;
+    grid-row-end:6;
   }
 
   .FAQ1 {
     display:grid;
     grid-column-start: 0;
     grid-column-end: 1;
-    grid-row-start:5;
-    grid-row-end:6;
+    grid-row-start:6;
+    grid-row-end:7;
+    margin-top: 0.2rem;
   }
   .FAQ2 {
     display:grid;
     grid-column-start: 0;
     grid-column-end: 1;
-    grid-row-start:6;
-    grid-row-end:7;
+    grid-row-start:7;
+    grid-row-end:8;
   }
 
   .FAQ3 {
       display:grid;
       grid-column-start: 0;
       grid-column-end: 1;
-      grid-row-start:7;
-      grid-row-end:8;
+      grid-row-start:8;
+      grid-row-end:9;
   }
 
   h4 {

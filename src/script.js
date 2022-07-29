@@ -1,17 +1,29 @@
 function validateForm() {
-  let x = document.forms["myForm"]["email"].value;
-  let y = document.forms["myForm"]["fname"].value;
-  let z = document.forms["myForm"]["lname"].value;
-  let n = document.forms["myForm"]["pnumber"].value;
-  if (x !== "" && y !== "" && z !== "" && n !== "") {
+  /* Save data to external file should there be set in front of fso and s */
+  const scriptURL ='https://script.google.com/macros/s/AKfycbz_jalCz_2aGOUlh35I1DZvmM0jzmUmwRjmZaeS1Bkpe18RlKQDknxxE1gDVB5Gu43e/exec'
+  form = document.forms["google-sheet"]
+  form_data = new FormData(form)
+  console.log(form["email"].value)
+  console.log(form_data)
+
+  let x = form["email"].value;
+  let y = form["fname"].value;
+  let z = form["lname"].value;
+  let n = form["pnumber"].value;
+  if (x !== "" && y !== "" && z !== "" && n !== "")
+  {
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+      .catch(error => console.error('Error!', error.message));
+
+    document.forms["google-sheet"]["email"].value = "";
+    document.forms["google-sheet"]["fname"].value = "";
+    document.forms["google-sheet"]["lname"].value = "";
+    document.forms["google-sheet"]["pnumber"].value = "";
+
     document.getElementById("message").innerHTML =
       `Thank you for your interest, ${y} ${z}. A KSOA member will contact you shortly.`;
     document.getElementById("message").style.display = "Flex";
-    document.forms["myForm"]["email"].value = "";
-    document.forms["myForm"]["fname"].value = "";
-    document.forms["myForm"]["lname"].value = "";
-    document.forms["myForm"]["pnumber]"].value = "";
-
     setTimeout(() => {
       document.getElementById("message").style.display = "none";
     }, 5000);
@@ -19,7 +31,6 @@ function validateForm() {
     document.getElementById("message").innerHTML =
       "Please complete each section of the form.";
     document.getElementById("message").style.display = "Flex";
-
     setTimeout(() => {
       document.getElementById("message").style.display = "none";
     }, 5000);
@@ -66,17 +77,17 @@ function ValidateEmail(email)
   return (false)
 }
 
-/* Save data to external file should there be set in front of fso and s */
-const scriptURL ='https://script.google.com/macros/s/AKfycbz_jalCz_2aGOUlh35I1DZvmM0jzmUmwRjmZaeS1Bkpe18RlKQDknxxE1gDVB5Gu43e/exec'
-const form = document.forms['google-sheet']
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(myForm)})
-                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-                .catch(error => console.error('Error!', error.message))
-            })
-  
+/*
+form.addEventListener('submit', e => {
+  console.log(document.forms["google-sheet"]["email"].value)
+  console.log("flag")
+  console.log(form)
+  e.preventDefault();
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+    .catch(error => console.error('Error!', error.message))
+})
+*/
 
 /* Display current date and time */
 function show_now() {
@@ -120,8 +131,6 @@ let weather =
   },
 
   displayWeather : function (data) {
-    console.log("in display weather");
-    console.log (data);
     const { name } = data;
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
@@ -162,6 +171,68 @@ document.querySelector(".search-bar")
 weather.fetchWeather("Denver");
     
 // var form = document.getElementById('sheetdb-form');
+// form.addEventListener("submit", e => {
+//   e.preventDefault();
+//   fetch(form.action, {
+//       method: "POST",
+//       body: new FormData(document.getElementById("sheetdb-form")),
+//   }).then(
+//       response => response.json())
+//   });
+
+  
+//Store form data locally//
+// var inputfname= document.getElementById("fname");
+// window.localStorage.setItem("fname", inputfname.value);
+
+// var inputlname= document.getElementById("lname");
+// window.localStorage.setItem("lname", inputEmail.value);
+
+// var inputEmail= document.getElementById("email");
+// window.localStorage.setItem("email", inputEmail.value); 
+// var inputpnumber= document.getElementById("pnumber");
+// window.localStorage.setItem("pnumber", inputpnumber.value);
+
+// var storedValue = localStorage.getItem("fname");
+// var storedValue = localStorage.getItem("lname");
+// var storedValue = localStorage.getItem("email");
+// var storedValue = localStorage.getItem("pnumber");
+
+//var fname = $('#fname').val();
+// var lname = $('#lname').val();
+// var email = $('#email').val();
+// var pnumber = $('#pnumber').val();
+// localStorage.setItem("fname", fname);
+// localStorage.setItem("lname", lname);
+// localStorage.setItem("email", email);
+// localStorage.setItem("pnumber", pnumber);
+
+// function persistInput(input)
+// {
+//   var key = "input-" + fname.id;
+
+//   var storedValue = localStorage.getItem(key);
+
+//   if (storedValue)
+//       input.value = storedValue;
+
+//   input.addEventListener('input', function ()
+//   {
+//       localStorage.setItem(key, fname.value);
+//   });
+// }
+
+// //Array with soccer term of the day//
+// var terms = new Array();
+// terms[0] = "SPA";
+// terms[1] = "DOGSO";
+// terms[2] = "Offside";
+// terms[3] = "SFP";
+
+// for (i=0;i<terms.length;i++) 
+// {
+// document.write(terms[i]);
+// }//
 // form.addEventListener("submit", e => {
 //   e.preventDefault();
 //   fetch(form.action, {

@@ -13,7 +13,7 @@ function validateForm() {
   if (x !== "" && y !== "" && z !== "" && n !== "")
   {
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+      .then(response => alert("Submission successful! We Will Contact You Soon..."))
       .catch(error => console.error('Error!', error.message));
 
     document.forms["google-sheet"]["email"].value = "";

@@ -118,7 +118,7 @@ p {
   margin: 0.1em;
 }
 
-form {
+.myForm {
   display: block;
   background-color: lightgrey;
   padding: 1em;
@@ -277,6 +277,7 @@ div#display {
     grid-column-end: 50%;
     grid-row-start: 3;
     grid-row-end: 4;
+    padding:0.2rem;
 
   }
 
@@ -288,13 +289,17 @@ div#display {
     grid-row-end: 3;
   }
 
-  form {
+  .myForm {
     text-align:center;
     display: grid;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 3;
-    grid-row-end: 7;
+    grid-row-end: 9;
+  }
+
+  .form-group {
+    text-size-adjust: 90%;
   }
 
   h3 {
@@ -313,6 +318,7 @@ div#display {
     grid-row-end: 6;
     grid-column-start: 0;
     grid-column-end: 2;
+    padding:0.2rem;
   }
 
   .FAQ2 {
@@ -322,6 +328,7 @@ div#display {
       grid-row-end: 7;
       grid-column-start: 0;
       grid-column-end: 2;
+      padding:0.2rem;
   }
 
   .FAQ3 {
@@ -331,6 +338,7 @@ div#display {
     grid-row-end: 8;
     grid-column-start: 0;
     grid-column-end: 2;
+    padding:0.2rem;
   }
 
 
@@ -349,22 +357,45 @@ div#display {
     grid-row-end: 11;
     grid-column-start: 0;
     grid-column-end: 2;
+    padding:0.2rem;
+  }
+
+  .resourceList li {
+    padding:0.2rem;
   }
 
   .weather {
-    display:grid;
-    grid-row-start: 7;
-    grid-row-end: 9;
-    grid-column-start: 2;
-    grid-column-end: 3;
-  }
-
-  .card {
     display:grid;
     grid-row-start: 10;
     grid-row-end: 11;
     grid-column-start: 2;
     grid-column-end: 3;
+    padding:0.5rem;
+  }
+
+  .temp {
+    padding:0.2rem;
+  }
+
+  .description {
+    padding:0.2rem;
+  }
+
+  .humidity {
+    padding: 0.2rem;
+  }
+
+  .wind {
+    padding: 0.2rem;
+  }
+
+  .card {
+    display:grid;
+    grid-row-start: 11;
+    grid-row-end: 12;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding: 0.1rem;
   }
 
   p {
@@ -386,15 +417,13 @@ div#display {
   }
 
   footer p {
-    display: grid;
-    align-items: center;
-    list-style-type: none;
-    color: #333;
-    padding-left: 0.7em;
-    padding-right: 0.7em;
+    display: flex;
+    color: black;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
   }
-
-
 }
 
 /* Large Media Query */
@@ -542,7 +571,7 @@ div#display {
       grid-column-end: 2;
   }
 
-  form {
+  .myForm {
     display: grid;
     grid-row-start: 3;
     grid-row-end: 6;
@@ -612,8 +641,8 @@ div#display {
   }
 
   .weather {
-    grid-row-start: 5;
-    grid-row-end: 8;
+    grid-row-start: 4;
+    grid-row-end: 7;
     grid-column-start: 2;
     grid-column-end: 3;
   }
@@ -622,8 +651,8 @@ div#display {
       display:grid;
       grid-column-start: 2;
       grid-column-end: 3;
-      grid-row-start:9;
-      grid-row-end:10;
+      grid-row-start:7;
+      grid-row-end:8;
       background:00000d0;
       color:white;
       padding:1em;
@@ -698,7 +727,9 @@ div#display {
   footer p {
     display: flex;
     color: black;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
   }
 }
